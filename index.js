@@ -66,12 +66,12 @@ class CountDown extends React.Component {
   };
 
   renderDigit = (d) => {
-    const {digitBgColor, digitTxtColor, size} = this.props;
+    const {digitBgColor, digitTxtColor, size, heightSizeMultiplier, widthSizeMultiplier} = this.props;
     return (
       <View style={[
         styles.digitCont,
         {backgroundColor: digitBgColor},
-        {width: size * 2.3, height: size * 2.6},
+        {width: size * widthSizeMultiplier, height: size * heightSizeMultiplier},
       ]}>
         <Text style={[
           styles.digitTxt,
@@ -139,6 +139,8 @@ CountDown.defaultProps = {
   timeToShow: DEFAULT_TIME_TO_SHOW,
   until: 0,
   size: 15,
+  heightSizeMultiplier: 2.6,
+  widthSizeMultiplier: 2.6,
 };
 
 const styles = StyleSheet.create({
